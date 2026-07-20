@@ -46,16 +46,16 @@ export default function HomePage() {
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/packages" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                প্যাকেজ
+                Packages
               </Link>
               <Link href="/destinations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                গন্তব্য
+                Destination
               </Link>
               <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                আমাদের সম্পর্কে
+                About Us
               </Link>
               <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                যোগাযোগ
+                Contacts
               </Link>
             </nav>
             <div className="flex items-center gap-3">
@@ -64,7 +64,7 @@ export default function HomePage() {
                 href="/build-trip"
                 className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-tea-600 text-white text-sm font-medium rounded-lg hover:bg-tea-700 transition-colors"
               >
-                ট্রিপ তৈরি করুন
+                Make a Trip
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <MobileNav />
