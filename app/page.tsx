@@ -250,8 +250,8 @@ export default function HomePage() {
                 id="hero-heading"
                 className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
               >
-                সিলেটের প্রকৃতি
-                <span className="block text-tea-700">আপনার পায়ে</span>
+                সিলেটকে দেখুন, অনুভব করুন,
+                <span className="block text-tea-700">মনে রাখুন।</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-base leading-8 text-foreground/80 sm:text-lg">
