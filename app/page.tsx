@@ -217,95 +217,114 @@ export default function HomePage() {
 
       <main id="main-content">
         {/* Hero */}
-        <section
-          aria-labelledby="hero-heading"
-          className="relative isolate overflow-hidden"
+<section
+  aria-labelledby="hero-heading"
+  className="relative isolate min-h-[min(92vh,900px)] overflow-hidden"
+>
+  {/* Background image */}
+  <div className="absolute inset-0 -z-20">
+    <Image
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2000&q=85"
+      alt="Green mountain landscape in Sylhet, Bangladesh"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-center scale-105"
+    />
+  </div>
+
+  {/* Layered overlays for depth */}
+  <div className="absolute inset-0 -z-10 bg-black/30" />
+  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background/95 via-background/55 to-transparent" />
+  <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/20 to-transparent" />
+
+  {/* Soft ambient glow */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute -left-32 top-1/4 -z-10 h-96 w-96 rounded-full bg-tea-600/15 blur-3xl"
+  />
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute -right-24 bottom-1/3 -z-10 h-80 w-80 rounded-full bg-forest-700/20 blur-3xl"
+  />
+
+  <div className="mx-auto flex min-h-[min(92vh,900px)] max-w-7xl flex-col justify-center px-4 pb-28 pt-28 sm:px-6 md:pb-36 md:pt-36 lg:px-8">
+    <div className="max-w-3xl">
+      {/* Badge */}
+      <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-tea-900 shadow-sm backdrop-blur-md">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-tea-500 opacity-60" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-tea-600" />
+        </span>
+        <Sparkles className="h-3.5 w-3.5 text-tea-600" aria-hidden="true" />
+        সিলেটকে দেখুন স্থানীয়দের চোখে
+      </div>
+
+      {/* Headline */}
+      <h1
+        id="hero-heading"
+        className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+      >
+        সিলেটকে দেখুন,
+        <br />
+        অনুভব করুন,
+        <span className="mt-1 block bg-gradient-to-r from-tea-700 via-tea-600 to-forest-700 bg-clip-text text-transparent">
+          মনে রাখুন।
+        </span>
+      </h1>
+
+      {/* Subtext */}
+      <p className="mt-6 max-w-xl text-base leading-8 text-foreground/75 sm:text-lg">
+        স্থানীয় ৫ জন পার্টনারের সাথে অ্যাথেন্টিক সিলেট ভ্রমণ।
+        প্যাকেজ বুক করুন অথবা নিজের মতো করে একটি স্মরণীয় ট্রিপ তৈরি করুন।
+      </p>
+
+      {/* CTAs */}
+      <div className="mt-9 flex flex-wrap gap-3.5">
+        <Link
+          href="/build-trip"
+          className="group inline-flex items-center gap-2.5 rounded-2xl bg-tea-700 px-7 py-4 text-[15px] font-semibold text-white shadow-lg shadow-tea-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-tea-800 hover:shadow-xl hover:shadow-tea-900/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tea-700 focus-visible:ring-offset-2"
         >
-          <div className="absolute inset-0 -z-20">
-            <Image
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2000&q=85"
-              alt="Green mountain landscape in Sylhet, Bangladesh"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
+          নিজের ট্রিপ তৈরি করুন
+          <ArrowRight
+            className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
+        </Link>
+        <Link
+          href="/packages"
+          className="inline-flex items-center gap-2 rounded-2xl border border-border/80 bg-white/70 px-7 py-4 text-[15px] font-semibold text-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tea-700 focus-visible:ring-offset-2"
+        >
+          প্যাকেজ দেখুন
+          <ChevronRight className="h-4.5 w-4.5" aria-hidden="true" />
+        </Link>
+      </div>
+
+      {/* Trust chips */}
+      <div className="mt-10 flex flex-wrap items-center gap-x-1 gap-y-3">
+        {[
+          "কোনো লুকানো ফি নেই",
+          "দ্রুত কনফার্মেশন",
+          "স্থানীয় গাইড",
+        ].map((item) => (
+          <div
+            key={item}
+            className="mr-4 inline-flex items-center gap-2 rounded-full bg-white/50 px-3.5 py-1.5 text-sm text-foreground/80 backdrop-blur-sm"
+          >
+            <Check
+              className="h-3.5 w-3.5 shrink-0 text-tea-700"
+              aria-hidden="true"
             />
+            {item}
           </div>
+        ))}
+      </div>
+    </div>
+  </div>
 
-          <div className="absolute inset-0 -z-10 bg-black/35" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-background/95 via-background/70 to-background/15" />
-          <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-background to-transparent" />
-
-          <div className="mx-auto max-w-7xl px-4 pb-24 pt-28 sm:px-6 md:pb-32 md:pt-40 lg:px-8">
-            <div className="max-w-3xl">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-tea-200/80 bg-white/75 px-3.5 py-2 text-sm font-medium text-tea-800 shadow-sm backdrop-blur">
-                <Sparkles
-                  className="h-4 w-4 text-tea-600"
-                  aria-hidden="true"
-                />
-                সিলেটকে দেখুন স্থানীয়দের চোখে
-              </div>
-
-              <h1
-                id="hero-heading"
-                className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
-              >
-                সিলেটকে দেখুন, অনুভব করুন,
-                <span className="block text-tea-700">মনে রাখুন।</span>
-              </h1>
-
-              <p className="mt-6 max-w-xl text-base leading-8 text-foreground/80 sm:text-lg">
-                স্থানীয় ৫ জন পার্টনারের সাথে অ্যাথেন্টিক সিলেট ভ্রমণ।
-                প্যাকেজ বুক করুন অথবা নিজের মতো করে একটি স্মরণীয় ট্রিপ তৈরি
-                করুন।
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/build-trip"
-                  className="inline-flex items-center gap-2 rounded-xl bg-tea-700 px-6 py-3.5 font-semibold text-white shadow-lg shadow-tea-900/15 transition-all hover:-translate-y-0.5 hover:bg-tea-800 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tea-700 focus-visible:ring-offset-2"
-                >
-                  নিজের ট্রিপ তৈরি করুন
-                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
-                </Link>
-
-                <Link
-                  href="/packages"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/85 px-6 py-3.5 font-semibold text-foreground shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tea-700 focus-visible:ring-offset-2"
-                >
-                  প্যাকেজ দেখুন
-                  <ChevronRight className="h-5 w-5" aria-hidden="true" />
-                </Link>
-              </div>
-
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-foreground/75">
-                <div className="flex items-center gap-2">
-                  <Check
-                    className="h-4 w-4 text-tea-700"
-                    aria-hidden="true"
-                  />
-                  কোনো লুকানো ফি নেই
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Check
-                    className="h-4 w-4 text-tea-700"
-                    aria-hidden="true"
-                  />
-                  দ্রুত কনফার্মেশন
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Check
-                    className="h-4 w-4 text-tea-700"
-                    aria-hidden="true"
-                  />
-                  স্থানীয় গাইড
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+  {/* Bottom fade into next section */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+</section>
 
         {/* Trust Signals */}
         <section
